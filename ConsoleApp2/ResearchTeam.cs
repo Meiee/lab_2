@@ -28,7 +28,7 @@ namespace ConsoleApp2
             _org = " Организация";
             _regNumb = 0;
             _timeFrame = TimeFrame.Year;
-            _papers = new Paper[0];
+            _papers = new Paper[3];
         }
         //Свойства
         public string Theme
@@ -65,11 +65,11 @@ namespace ConsoleApp2
         {
             Paper[] tmp = new Paper[_papers.Length + papers.Length];
 
-            for (int i=0; i < _papers.Length; i++)
+            for (int i=0; i <= _papers.Length; i++)
             {
                 tmp[i] = _papers[i];
             }
-           for (int i=0; i < papers.Length; i++ )
+           for (int i=0; i <= papers.Length; i++ )
             {
                 tmp[_papers.Length+i] = papers[i];
             }
@@ -80,13 +80,18 @@ namespace ConsoleApp2
             //скопировать туда сначала старые данные (_паперс)
             //с той позиции, где остановились, докопировать элементы нового массива
             //подменяем значение ссылки _паперс = новый массив
-            //скопирова
+            //скопировать
             // papers.ToString(); 
 
         }
         public string ToFullString()
         {
             string _str = $"{Theme} {Org} {RegNumb} {TimeFrame} {Paper}";
+            return _str;
+        }
+        public string ToShortString()
+        {
+            string _str = $"{Theme} {Org} {RegNumb} {TimeFrame}";
             return _str;
         }
     }

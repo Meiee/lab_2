@@ -15,23 +15,39 @@ namespace ConsoleApp2
         
         static void Main()
         {
-            ResearchTeam team = new ResearchTeam();
-             Paper paper = new Paper();
-            paper.Name = "111111"; 
-             Paper paper2 = new Paper();
-            paper2.Name = "22222";
+            ResearchTeam theme = new ResearchTeam();
+            ResearchTeam org = new ResearchTeam();
+            ResearchTeam regNumb = new ResearchTeam();
+            ResearchTeam timeFrame = new ResearchTeam();
+            ResearchTeam paper = new ResearchTeam();
 
-            Paper[] ppps = new Paper[2];
-            ppps[0] = paper;
-            ppps[1] = paper2;
+            theme.Theme = "Какая-то публикация";
+            org.Org = "Какая-то организация";
+            regNumb.RegNumb = 2;
+            timeFrame.TimeFrame = 0;
 
-            team.AddPapers(ppps);
-            team.AddPapers(ppps);
+            Console.WriteLine(theme.Theme.ToString(), org.Org.ToString(), regNumb.RegNumb.ToString(), timeFrame.TimeFrame.ToString(), paper.ToString());
 
-            Console.WriteLine();
-            Person obj = new Person();
-            Paper obj2 = new Paper();
-            Console.WriteLine(obj2.ToFullString());
+            theme.Theme.AddPapers();
+
+
+            //Paper paperr1 = new Paper();
+            //paperr1.Name = "111111";
+            //Paper paperr2 = new Paper();
+            //paperr2.Name = "22222";
+
+            //Paper[] ppps = new Paper[2];
+            //ppps[0] = paper;
+            //ppps[1] = paper2;
+
+            //team.AddPapers(ppps);
+            //team.AddPapers(ppps);
+            //Console.WriteLine(team.ToShortString());
+
+            //Console.WriteLine();
+            //Paper obj1 = new Paper();
+            //Paper obj2 = new Paper();
+            //Console.WriteLine(obj2.ToFullString());
 
         }
     }
